@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hyunbeom.owls_02.LoginActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:text="OWLsDiary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:textColor="#FFFFFF"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="56dp"
+            android:layout_weight="0.05" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint=" e-mail"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/emailText"
+            android:drawableStart="@drawable/ic_mail_outline_black_24dp"
+            android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/colorPrimary"/>
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/passwordText"
+            android:drawableStart="@drawable/ic_https_black_24dp"
+            android:drawableLeft="@drawable/ic_https_black_24dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"/>
+
+        <Button
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@color/colorPrimaryDark"
+            android:text="Sign in"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:text="Sign up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/signupButton"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</RelativeLayout>
