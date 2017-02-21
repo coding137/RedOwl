@@ -43,7 +43,7 @@
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:id="@+id/emailText"
+                android:id="@+id/email"
                 android:drawableStart="@drawable/ic_mail_outline_black_24dp"
                 android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
                 android:layout_marginTop="50dp"
@@ -58,7 +58,7 @@
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:id="@+id/passwordText"
+                android:id="@+id/pass"
                 android:drawableStart="@drawable/ic_https_black_24dp"
                 android:drawableLeft="@drawable/ic_https_black_24dp"
                 android:layout_marginTop="10dp"
@@ -72,7 +72,7 @@
                 android:padding="10dp"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff"
-                android:id="@+id/phoneText"
+                android:id="@+id/phone"
                 android:drawableStart="@drawable/ic_call_black_24dp"
                 android:drawableLeft="@drawable/ic_call_black_24dp"
                 android:layout_marginTop="10dp"
@@ -81,7 +81,7 @@
             <RadioGroup
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/genderGroup"
+                android:id="@+id/gender"
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp">
@@ -90,7 +90,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Female"
-                    android:id="@+id/genderFemale"
+                    android:id="@+id/female"
                     android:layout_weight="1"
                     android:checked="true"/>
 
@@ -98,7 +98,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:id="@+id/genderMale"
+                    android:id="@+id/male"
                     android:layout_weight="1" />
 
             </RadioGroup>
@@ -113,7 +113,9 @@
                 android:text="Join us"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:id="@+id/registerButton"/>
+                android:id="@+id/registerButton"
+                android:onClick="insert"
+                />
 
 
         </LinearLayout>

@@ -1,0 +1,65 @@
+@데이타베이스
+
+데이타베이스 목록을 보여달라
+show databases;
+
+데이타 베이스 삭제하겠다.
+
+drop "DB NAME";
+
+데이타 베이스를 생성하겠다.
+CREATE DATABASE `데이터베이스명` CHARACTER SET utf8 COLLATE utf8_general_ci;
+ex)
+mysql> CREATE DATABASE redowl CHARACTER SET utf8 COLLATE utf8_general_ci;
+Query OK, 1 row affected (0.01 sec)
+
+
+@테이블
+
+
+테이블을 생성하겠다
+
+CREATE TABLE members(
+	pid INT primary key auto_increment,
+	email varchar(50) not null,
+	pass varchar(20) not null,
+	phone varchar(20) not null,
+	sex enum('male','female') not null,
+	join_dat datetime not null
+);
+ex)
+mysql> CREATE TABLE members(
+    ->  pid INT primary key auto_increment,
+    ->  email varchar(50) not null,
+    ->  pass varchar(20) not null,
+    ->  phone varchar(20) not null,
+    ->  sex enum('male','female') not null,
+    ->  join_dat datetime not null
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+@@@테이블구조
++----------+-----------------------+------+-----+---------+----------------
+| Field    | Type                  | Null | Key | Default | Extra
++----------+-----------------------+------+-----+---------+----------------
+| pid      | int(11)               | NO   | PRI | NULL    | auto_increment
+| email    | varchar(50)           | NO   |     | NULL    |
+| pass     | varchar(20)           | NO   |     | NULL    |
+| phone    | varchar(20)           | NO   |     | NULL    |
+| sex      | enum('male','female') | NO   |     | NULL    |
+| join_dat | datetime              | NO   |     | NULL    |
++----------+-----------------------+------+-----+---------+----------------
+
+
+특정 테이블을 사용하겠다.
+use "테이블이름";
+EX) use members;
+
+테이블의 구조를 보여달라
+desc 'tablename'
+
+
+CREATE TABLE members(
+	pid INT primary key auto_increment,
+	email varchar(50) not null,
+	pass varchar(20) not null
+);
