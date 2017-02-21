@@ -37,6 +37,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:inputType="textEmailAddress"
             android:layout_width="280dp"
             android:layout_height="wrap_content"
             android:hint=" e-mail"
@@ -72,6 +73,7 @@
             android:textColor="#FFFFFF"
             android:background="@color/colorPrimaryDark"
             android:text="Sign in"
+            android:id="@+id/loginButton"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"/>
         <TextView
