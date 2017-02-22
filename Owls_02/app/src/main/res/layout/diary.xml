@@ -7,58 +7,44 @@
     tools:context="org.hyunbeom.owls_02.RegisterActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/nameText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorPrimary">
+            android:paddingBottom="2dip"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:text="Name"/>
 
-            <TextView
-                android:text="My diary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textColor="#FFFFFF"
-                android:padding="10dp"
-                android:id="@+id/diaryText"
-                android:drawableStart="@drawable/ic_sms_black_24dp"
-                android:drawableLeft="@drawable/ic_sms_black_24dp"
-                />
-        </LinearLayout>
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/dateText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark">
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:text="Date"/>
 
-            <TextView
-                android:text="LeeHyunBeom"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:layout_marginLeft="8dp"
-                android:padding="3dp"
-                android:id="@+id/nameText"/>
-
-            <TextView
-                android:text="2016-06-28"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:textColor="#FFFFFF"
-                android:textColorHint="#FFFFFF"
-                android:padding="3dp"
-                android:id="@+id/dateText"/>
-
-
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/diaryText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:text="Contents"/>
 
     </LinearLayout>
 </RelativeLayout>
