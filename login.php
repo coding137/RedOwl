@@ -1,7 +1,7 @@
 <?php 
- define('HOST','192.168.43.234');
+ define('HOST','192.168.0.16');
  define('USER','root');
- define('PASS','123456789');
+ define('PASS','rcube1112');
  define('DB','redowl');
  $con = mysqli_connect(HOST,USER,PASS,DB) or die('Unable to Connect');
 

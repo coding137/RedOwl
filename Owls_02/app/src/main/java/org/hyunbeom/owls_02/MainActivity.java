@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            loading = ProgressDialog.show(MainActivity.this, "Please Wait", null, true, true);
+
             target="http://192.168.0.16/list.php";
         }
 
@@ -97,6 +97,7 @@ public class MainActivity extends ActionBarActivity {
         public void onPostExecute(String response){
             super.onPostExecute(response);
 
+
             try{
                 JSONObject jsonObject = new JSONObject(response);
                 JSONArray jsonArray = jsonObject.getJSONArray("response");
@@ -117,6 +118,7 @@ public class MainActivity extends ActionBarActivity {
             }catch (Exception e){
                 e.printStackTrace();
             }
+
 
         }
     }

@@ -1,7 +1,7 @@
 <?php  
-  $servername = "192.168.43.234";
+  $servername = "192.168.0.16";
   $username = "root";
-  $password = "123456789";
+  $password = "rcube1112";
   $dbname = "redowl";
 
   $conn = new mysqli($servername, $username, $password, $dbname);
