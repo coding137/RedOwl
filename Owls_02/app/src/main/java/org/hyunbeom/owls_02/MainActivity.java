@@ -1,32 +1,20 @@
 package org.hyunbeom.owls_02;
 
+import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.SimpleAdapter;
-
-import org.apache.http.protocol.HTTP;
 import org.json.JSONArray;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.params.BasicHttpParams;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-
-import org.json.JSONException;
 import org.json.JSONObject;
-import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends ActionBarActivity {
@@ -40,6 +28,8 @@ public class MainActivity extends ActionBarActivity {
     private static final String TAG_WRITER = "writer";
     private static final String TAG_DATE = "date";
 
+    private SwipeRefreshLayout swipeContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,18 +41,24 @@ public class MainActivity extends ActionBarActivity {
         adapter = new DiaryListAdapter(getApplicationContext(),diaryList);
         diaryListView.setAdapter(adapter);
 
-        new BackgroundTask().execute();
+        final LinearLayout diary = (LinearLayout) findViewById(R.id.diary);
 
+        new BackgroundTask().execute();
     }
+
 
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String target;
+        ProgressDialog loading;
 
         @Override
         protected void onPreExecute() {
-        target="http://192.168.0.16/list.php";
-    }
+            super.onPreExecute();
+            loading = ProgressDialog.show(MainActivity.this, "Please Wait", null, true, true);
+            target="http://192.168.0.16/list.php";
+        }
+
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -98,11 +94,12 @@ public class MainActivity extends ActionBarActivity {
         }
 
         @Override
-        public void onPostExecute(String result){
+        public void onPostExecute(String response){
+            super.onPostExecute(response);
 
             try{
-                JSONObject jsonObject = new JSONObject(result);
-                JSONArray jsonArray = jsonObject.getJSONArray("result");
+                JSONObject jsonObject = new JSONObject(response);
+                JSONArray jsonArray = jsonObject.getJSONArray("response");
                 int count = 0;
                 String diaryContent, diaryName, diaryDate;
 
@@ -120,6 +117,7 @@ public class MainActivity extends ActionBarActivity {
             }catch (Exception e){
                 e.printStackTrace();
             }
+
         }
     }
 
