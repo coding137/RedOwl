@@ -45,7 +45,7 @@
             android:padding="10dp"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
-            android:id="@+id/emailText"
+            android:id="@+id/email"
             android:drawableStart="@drawable/ic_mail_outline_black_24dp"
             android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
             android:layout_marginTop="50dp"
@@ -59,7 +59,7 @@
             android:padding="10dp"
             android:textColor="#ffffff"
             android:textColorHint="#ffffff"
-            android:id="@+id/passwordText"
+            android:id="@+id/pass"
             android:drawableStart="@drawable/ic_https_black_24dp"
             android:drawableLeft="@drawable/ic_https_black_24dp"
             android:layout_marginTop="10dp"
@@ -75,7 +75,9 @@
             android:text="Sign in"
             android:id="@+id/loginButton"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="invokeLogin"
+            />
         <TextView
             android:text="Sign up"
             android:layout_width="wrap_content"
