@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity{
                 try{
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            "http://192.168.0.16/login.php");
+                            Config.LOGIN_URL+"login.php");
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpClient.execute(httpPost);
                     HttpEntity entity = response.getEntity();

@@ -1,10 +1,13 @@
 package org.hyunbeom.owls_02;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import org.json.JSONArray;
@@ -33,15 +36,14 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+       setContentView(R.layout.activity_main);
+
+
 
         diaryListView = (ListView) findViewById(R.id.diaryListView);
         diaryList = new ArrayList<Diary>();
 
         adapter = new DiaryListAdapter(getApplicationContext(),diaryList);
-        diaryListView.setAdapter(adapter);
-
-        final LinearLayout diary = (LinearLayout) findViewById(R.id.diary);
 
         new BackgroundTask().execute();
     }
@@ -50,13 +52,14 @@ public class MainActivity extends ActionBarActivity {
     class BackgroundTask extends AsyncTask<Void, Void, String> {
 
         String target;
-        ProgressDialog loading;
+        Dialog loading;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            loading = ProgressDialog.show(MainActivity.this, "Please wait", "Loading...");
 
-            target="http://192.168.0.16/list.php";
+            target=Config.LOGIN_URL+"list.php";
         }
 
 
@@ -118,9 +121,17 @@ public class MainActivity extends ActionBarActivity {
             }catch (Exception e){
                 e.printStackTrace();
             }
-
-
+            loading.dismiss();
+            viewlist();
         }
+    }
+
+    public void viewlist (){
+//        v = new View(new )
+
+        diaryListView.setAdapter(adapter);
+        final LinearLayout diary = (LinearLayout) findViewById(R.id.diary);
+
     }
 
 }

@@ -22,10 +22,7 @@ Query OK, 1 row affected (0.01 sec)
 CREATE TABLE members(
 	pid INT primary key auto_increment,
 	email varchar(50) not null,
-	pass varchar(20) not null,
-	phone varchar(20) not null,
-	sex enum('male','female') not null,
-	join_dat datetime not null
+	pass varchar(20) not nulll
 );
 ex)
 mysql> CREATE TABLE members(

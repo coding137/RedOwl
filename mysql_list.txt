@@ -1,13 +1,13 @@
 
 mysql> USE redowl
 Database changed
-mysql> CREATE TABLE list(
-    -> tid INT primary key auto_increment,
-    -> contents TEXT not null,
-    -> date DATETIME not null,
-    -> writer INT not null,
-    -> confirm BOOLEAN not null
-    -> );
+CREATE TABLE list(
+tid INT primary key auto_increment,
+contents TEXT not null,
+date DATE not null,
+writer INT not null,
+confirm BOOLEAN not null
+);
 Query OK, 0 rows affected (0.06 sec)
 
 mysql> show tables
@@ -31,3 +31,7 @@ mysql> EXPLAIN list
 | confirm  | tinyint(1) | NO   |     | NULL    |                |
 +----------+------------+------+-----+---------+----------------+
 5 rows in set (0.00 sec)
+
+
+
+ insert into list (contents,date,writer,confirm) values('dummy1', '2017-02-24',1,false);

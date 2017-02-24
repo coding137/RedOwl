@@ -64,7 +64,7 @@ public class RegisterActivity extends Activity{
                     String email = (String)params[0];
                     String pass = (String)params[1];
 
-                    String link="http://192.168.0.16/joinok.php";
+                    String link=Config.LOGIN_URL+"joinok.php";
                     String data  = URLEncoder.encode("email", "UTF-8") + "=" + URLEncoder.encode(email, "UTF-8");
                     data += "&" + URLEncoder.encode("pass", "UTF-8") + "=" + URLEncoder.encode(pass, "UTF-8");
 
