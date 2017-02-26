@@ -133,5 +133,8 @@ public class MainActivity extends ActionBarActivity {
         final LinearLayout diary = (LinearLayout) findViewById(R.id.diary);
 
     }
+    public void gowrite (View view){
+        startActivity(new Intent(MainActivity.this,WriteActivity.class));
+    }
 
 }

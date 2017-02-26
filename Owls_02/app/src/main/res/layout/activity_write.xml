@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.hyunbeom.owls_02.RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:text="Write "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:id="@+id/writeName"
+                android:layout_margin="10dp"
+
+                android:background="#FFFFFF"/>
+            <EditText
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:hint="Date"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:id="@+id/writeDate"
+                android:layout_margin="10dp"
+                android:background="#FFFFFF"/>
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:hint="Input"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                android:id="@+id/writeContents"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#FFFFFF"/>
+
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@color/colorPrimaryDark"
+                android:text="Upload"
+                android:id="@+id/writeButton"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center"
+                android:onClick="insert"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>
