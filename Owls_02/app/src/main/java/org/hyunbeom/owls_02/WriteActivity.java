@@ -31,15 +31,13 @@ public class WriteActivity extends AppCompatActivity {
         //TextView registerButton = (TextView) findViewById(R.id.writeButton);
 
         editTextCont = (EditText) findViewById(R.id.writeContents);
-        editTextName = (EditText) findViewById(R.id.writeName);
-        editTextDay = (EditText) findViewById(R.id.writeDate);
 
     }
 
     public void insert(View view){
         String cont = editTextCont.getText().toString();
-        String name = editTextName.getText().toString();
-        String day = editTextDay.getText().toString();
+        String name = "aaa";
+        String day = "2017-06-28";
 
         insertToDatabase(cont, name, day);
     }

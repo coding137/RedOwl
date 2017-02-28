@@ -4,6 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context="org.hyunbeom.owls_02.RegisterActivity">
 
     <LinearLayout
@@ -12,45 +13,40 @@
         android:orientation="vertical"
         android:id="@+id/diary">
 
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="460dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:id="@+id/fragment">
+            <ListView
+                android:layout_width="350dp"
+                android:layout_height="460dp"
+                android:id="@+id/diaryListView"
+
+                android:dividerHeight="10dp"
+                android:background="#99FFFFFF"
+                android:layout_gravity="center"
+                />
+        </RelativeLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@color/colorPrimary">
+            android:orientation="vertical">
 
-            <TextView
-                android:text="My diary list"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:text="Edit"
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/ic_star_black_24dp"
                 android:id="@+id/loginButton"
-                android:layout_marginRight="10dp"
-                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center"
                 android:onClick="gowrite"
                 />
         </LinearLayout>
-
-
-        <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/diaryListView"
-                android:layout_margin="10dp"
-                android:dividerHeight="10dp"
-                >
-        </ListView>
 
     </LinearLayout>
 </RelativeLayout>
