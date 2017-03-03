@@ -1,4 +1,4 @@
-package org.hyunbeom.owls;
+package com.example.ihyunbeom.owls;
 
 import org.junit.Test;
 

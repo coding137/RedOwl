@@ -1,4 +1,4 @@
-package org.hyunbeom.owls;
+package com.example.ihyunbeom.owls;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("org.hyunbeom.owls", appContext.getPackageName());
+        assertEquals("com.example.ihyunbeom.owls", appContext.getPackageName());
     }
 }
