@@ -27,7 +27,9 @@
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="10dp"
+                android:onClick="testview"
+                />
         </LinearLayout>
 
         <ListView
@@ -40,4 +42,5 @@
         </ListView>
 
     </LinearLayout>
+
 </RelativeLayout>

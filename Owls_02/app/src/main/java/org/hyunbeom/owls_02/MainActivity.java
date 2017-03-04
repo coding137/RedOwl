@@ -32,12 +32,14 @@ public class MainActivity extends ActionBarActivity {
     private static final String TAG_DATE = "date";
 
     private SwipeRefreshLayout swipeContainer;
+    private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_main);
-
+        Intent myValue= getIntent();
+        String email = (String) myValue.getStringExtra(LoginActivity.EMAIL);
 
 
         diaryListView = (ListView) findViewById(R.id.diaryListView);
@@ -132,6 +134,11 @@ public class MainActivity extends ActionBarActivity {
         diaryListView.setAdapter(adapter);
         final LinearLayout diary = (LinearLayout) findViewById(R.id.diary);
 
+    }
+
+    public void testview(View view){
+        this.view = view;
+        startActivity(new Intent(MainActivity.this,testActivity.class));
     }
 
 }

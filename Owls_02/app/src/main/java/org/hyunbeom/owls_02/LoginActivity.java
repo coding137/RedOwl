@@ -1,15 +1,13 @@
 package org.hyunbeom.owls_02;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.app.Dialog;
 import  android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,9 +22,9 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +32,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import android.content.SharedPreferences;
 public class LoginActivity extends AppCompatActivity{
 
     private boolean loggedIn = false;
@@ -42,43 +41,43 @@ public class LoginActivity extends AppCompatActivity{
     private EditText editTextPass;
 
     public static final String EMAIL = "email";
-
+    public static final String PARTENER = "";
     String email;
     String pass;
+    JSONArray jsonArray=null;
+
+
+    private String jsonemail="";
+    private String jsonpartner="";
+    private String jsonstatus="";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         editTextEmail = (EditText) findViewById(R.id.email);
         editTextPass = (EditText) findViewById(R.id.pass);
+
+
 
         TextView registerButton = (TextView) findViewById(R.id.signupButton);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
-                LoginActivity.this.startActivity(registerIntent);
+               startActivity(registerIntent);
             }
         });//instant end
 
         Button loginButton = (Button) findViewById(R.id.loginButton);
 
-        //  loginButton.setOnClickListener(new View.OnClickListener() {
 
-          /*  @Override
-            public void onClick(View view) {
-            //    invokeLogin(view);
-                //Intent mainintent = new Intent(LoginActivity.this, MainActivity.class);
-                //LoginActivity.this.startActivity(mainintent);
-            }
-        });//instant end
-        */
     }// onCreate end
 
     public void invokeLogin(View view){
+
+
         email = editTextEmail.getText().toString();
         pass = editTextPass.getText().toString();
 
@@ -113,12 +112,12 @@ public class LoginActivity extends AppCompatActivity{
                 try{
                     HttpClient httpClient = new DefaultHttpClient();
                     HttpPost httpPost = new HttpPost(
-                            Config.LOGIN_URL+"login.php");
+                            Config.LOGIN_URL+"newLogin.php");
                     httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
                     HttpResponse response = httpClient.execute(httpPost);
                     HttpEntity entity = response.getEntity();
                     is = entity.getContent();
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"), 8);
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
                     StringBuilder sb = new StringBuilder();
 
                     String line = null;
@@ -126,7 +125,7 @@ public class LoginActivity extends AppCompatActivity{
                     {
                         sb.append(line + "\n");
                     }
-                    result = sb.toString();
+                    result = sb.toString().trim();
                 } catch (ClientProtocolException e) {
                     e.printStackTrace();
                 } catch (UnsupportedEncodingException e) {
@@ -138,15 +137,79 @@ public class LoginActivity extends AppCompatActivity{
             }//
             @Override
             protected void onPostExecute(String result) {
+                SharedPreferences preferences  = getSharedPreferences("pref", MODE_PRIVATE);
+                SharedPreferences.Editor editor= preferences.edit();
+//                SaveSharedPreference.clearShredPreference(getApplicationContext());
+                String s = result;
+                getPartner(s);
+                Log.i("fault is ","on post");
 
-                String s = result.trim();
+
+//                try{
+//                    JSONObject jsonObject = new JSONObject(result);
+//                    JSONArray jsonArray = jsonObject.getJSONArray("response");
+//                    Log.i("fault is ","try");
+//                    for(int i =0 ; i<jsonArray.length();i++){
+//
+//
+//                        JSONObject c= jsonArray.getJSONObject(i);
+//                        jsonemail = c.getString("email");
+//                        jsonstatus = c.getString("status");
+//                        jsonpartner= c.getString("partner");
+//
+//                    }
+//
+//
+//
+//                }catch (Exception e){
+//                    e.getMessage();
+//                }
+
+
+
+
+                Log.i("fault is ",jsonstatus);
+                SaveSharedPreference.setSharedPreferenceString(getApplicationContext(),"email",jsonemail);
+                SaveSharedPreference.setSharedPreferenceString(getApplicationContext(),"partner",jsonpartner);
+                SaveSharedPreference.setSharedPreferenceString(getApplicationContext(),"status",jsonstatus);
                 loadingDialog.dismiss();
-                if(s.equalsIgnoreCase("success")){
-                    Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-                    intent.putExtra(EMAIL, email);
+                if(jsonstatus.toString().equals("matched")){
+                    Intent mainintent = new Intent(LoginActivity.this, MainActivity.class);
+                    SaveSharedPreference.setSharedPreferenceString(getApplicationContext(),"email",email);
+
+                  // mainintent.putExtra(EMAIL, email);
+                   // intent.putExtra(PARTENER, email);
+                    startActivity(mainintent);
                     finish();
+
+                }else if(jsonstatus.equalsIgnoreCase("unmatched")) {
+                    Intent intent = new Intent(LoginActivity.this, Unmatched.class);
+                    intent.putExtra(EMAIL, email);
+                    SaveSharedPreference.setSharedPreferenceString(getApplicationContext(),"email",email);
+
+//                    editor.putString("email",email);
+//                    editor.commit();
                     startActivity(intent);
+
+                    finish();
+
+                }else if(jsonstatus.equalsIgnoreCase("await")){
+                    Intent intent = new Intent(LoginActivity.this, Await.class);
+
+                    startActivity(intent);
+
+                    finish();
+
+                }else if(jsonstatus.equalsIgnoreCase("invited")){
+                    Intent intent = new Intent(LoginActivity.this, Invited.class);
+                    intent.putExtra(EMAIL, email);
+                    editor.putString("email",email);
+                    editor.commit();
+                    startActivity(intent);
+
+                    finish();
                 }else {
+                    SaveSharedPreference.clearShredPreference(getApplicationContext());
                     Toast.makeText(getApplicationContext(), "Invalid User Name or Password", Toast.LENGTH_LONG).show();
                 }
             }//end
@@ -156,6 +219,27 @@ public class LoginActivity extends AppCompatActivity{
         LoginAsync la = new LoginAsync();
         la.execute(email, pass);
     }//login end
+ protected  void getPartner(String myjson){
+        try{
+            JSONObject jsonObject = new JSONObject(myjson);
+            jsonArray = jsonObject.getJSONArray("response");
+
+            for(int i =0 ; i<jsonArray.length();i++){
+                JSONObject c= jsonArray.getJSONObject(i);
+                jsonemail = c.getString("email");
+                jsonpartner= c.getString("partner");
+                jsonstatus = c.getString("status");
+            }
+
+
+
+        }catch (Exception e){
+            e.getMessage();
+        }
+    }
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
