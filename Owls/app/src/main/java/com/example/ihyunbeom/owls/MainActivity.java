@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     private int star=0;
+    private int starrandom=0;
+    private int[] starArrary1={18,13,14,17,9,6,15,12,8,19,7,0,16,2,11,3,5,4,1,10};
+    private int[] starArrary2={14,13,18,7,19,8,12,15,6,9,17,10,1,4,5,3,11,2,16,0};
+    private int[] starArrary3={13,14,18,15,12,8,19,7,6,9,17,3,5,4,1,10,11,2,16,0};
 
     LinearLayout sky;
     LinearLayout sidebar;
@@ -48,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         sButton[0] = (ImageButton) findViewById(R.id.star1);
         sButton[1] = (ImageButton) findViewById(R.id.star2);
@@ -69,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         sButton[17] = (ImageButton) findViewById(R.id.star18);
         sButton[18] = (ImageButton) findViewById(R.id.star19);
         sButton[19] = (ImageButton) findViewById(R.id.star20);
+
+        starrandom = (int)(Math.random()*2);
 
         sky = (LinearLayout) findViewById(R.id.sky);
         sidebar = (LinearLayout) findViewById(R.id.sidebar);
@@ -102,12 +109,12 @@ public class MainActivity extends AppCompatActivity {
         */
         sky.setVisibility(View.VISIBLE);
         sidebar.setVisibility(View.VISIBLE);
-        for(int i=star; i<20;i++) {
-            sButton[i].setVisibility(View.GONE);
-        }
-        for(int i=0; i<star;i++) {
-            sButton[i].setVisibility(View.VISIBLE);
-        }
+        //for(int i=star; i<20;i++) {
+            //sButton[i].setVisibility(View.GONE);
+        //}
+        //for(int i=0; i<star;i++) {
+           // sButton[i].setVisibility(View.VISIBLE);
+        //}
         /*
             layout.setVisibility(View.VISIBLE);
             해당 뷰를 보여줌
@@ -184,7 +191,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void createStar(View v){
-        sButton[star].setVisibility(View.VISIBLE);
+        //sButton[star].setVisibility(View.VISIBLE);
+        if(starrandom == 0)
+            sButton[starArrary1[star]].setImageResource(R.drawable.starlite);
+        else if(starrandom == 1)
+            sButton[starArrary2[star]].setImageResource(R.drawable.starlite);
+        else
+            sButton[starArrary3[star]].setImageResource(R.drawable.starlite);
         if(star<19)
             star++;
         goback(v);

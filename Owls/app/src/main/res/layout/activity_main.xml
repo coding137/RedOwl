@@ -14,7 +14,6 @@
         android:layout_gravity="center"
         >
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -35,7 +34,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star1"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -45,7 +44,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star2"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -55,7 +54,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star3"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -65,7 +64,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star4"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -75,7 +74,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star5"/>
         </LinearLayout>
         <LinearLayout
@@ -92,7 +91,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star6"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -102,7 +101,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star7"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -112,7 +111,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star8"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -122,7 +121,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star9"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -132,7 +131,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star10"/>
             <ImageButton
                 android:layout_width="wrap_content"
@@ -142,7 +141,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:rotation="190"
-                android:src="@drawable/ic_star_black_24dp"
+                android:src="@drawable/ic_star_border_black_24dp"
                 android:id="@+id/star11"/>
         </LinearLayout>
             <LinearLayout
@@ -159,7 +158,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star12"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -170,7 +169,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star13"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -180,7 +179,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star14"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -190,7 +189,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star15"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -200,7 +199,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star16"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -210,7 +209,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star17"/>
             </LinearLayout>
             <LinearLayout
@@ -227,7 +226,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star18"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -237,7 +236,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star19"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -247,7 +246,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:rotation="190"
-                    android:src="@drawable/ic_star_black_24dp"
+                    android:src="@drawable/ic_star_border_black_24dp"
                     android:id="@+id/star20"/>
             </LinearLayout>
 
