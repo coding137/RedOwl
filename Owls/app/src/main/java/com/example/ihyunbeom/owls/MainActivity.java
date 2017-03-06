@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    public void gowrite(View v){
+    public void gowrite_fragment(View v){
         sky.setVisibility(View.GONE);
         sidebar.setVisibility(View.GONE);
         button_write.setVisibility(View.GONE);
@@ -187,9 +187,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment, new WriteFragment());
         fragmentTransaction.commit();
-
-
     }
+
+    public void gowrite_activity(View v){
+        Intent gowrite = new Intent(MainActivity.this, WriteActivity.class);
+        MainActivity.this.startActivity(gowrite);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
     public void createStar(View v){
         //sButton[star].setVisibility(View.VISIBLE);
         if(starrandom == 0)
