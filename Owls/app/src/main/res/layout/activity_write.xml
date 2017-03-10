@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_diary">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="460dp"
+            android:background="#99FFFFFF"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:id="@+id/imgView"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    />
+
+                <Button
+                    android:layout_width="330dp"
+                    android:layout_height="230dp"
+                    android:textSize="20dp"
+                    android:textColor="#FFFFFF"
+                    android:background="#00FFFFFF"
+                    android:text="img"
+                    android:layout_gravity="center"
+                    android:id="@+id/imageSelect"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:onClick="select"
+                    />
+            </FrameLayout>
+
+            <EditText
+                android:layout_width="330dp"
+                android:layout_height="210dp"
+                android:textColor="#262626"
+                android:hint="text area"
+                android:textColorHint="#5e5e5e"
+                android:id="@+id/writeContents"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#50FFFFFF"/>
+
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#00FFFFFF"
+            android:src="@drawable/ic_border_color_black_24dp"
+            android:id="@+id/writeButton"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:onClick="insert"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
